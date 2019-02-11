@@ -16,7 +16,11 @@ public class RestaurantTable
      */
     public RestaurantTable()
     {
+
         allTables = new Table[5];
+        for( int i=0; i<4; i++ )  {
+            allTables[i] = new Table();
+        }
     }
 
     /**
@@ -28,8 +32,10 @@ public class RestaurantTable
     public void placeTableOrders(int tableNum, String[] foods, double prices[])
     {
         Table t = allTables[tableNum];
+
         for (int i = 0; i < foods.length; i++) {
             t.placeOrder(foods[i], prices[i]);
+            //allTables[tableNum].placeOrder(foods[i], prices[i]);
         }
     }
     
